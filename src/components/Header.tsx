@@ -1,10 +1,14 @@
 import styles from "../styles/header.module.css"
 import MenuIcon from "@/public/static/MenuIcon.png"
+import CloseIcon from "@/public/static/Close.png"
 import Image from "next/image"
+import { useState } from "react"
+import Link from "next/link"
 
 function Header(){
 
     const Menus: string[] = ["Home", "About"]
+    const [open, setOpen] = useState<boolean>(false)
 
     return(
     <div className={styles.header}>
@@ -13,24 +17,29 @@ function Header(){
             <div>
                 <div className={styles.mobileView}>
                     <div className={styles.mobile} >
-                        <Image src={MenuIcon} alt="Icon" className={styles.openIcon} />
-                        <ul className={styles.mobileMenu}>
-                            {
-                                Menus.map((menu: string) => {
-                                    return <li key={menu} className={styles.menuOption} >{menu}</li>
-                                })
-                            }
-                        </ul>
+                        <Image src={open ? CloseIcon : MenuIcon} alt="Icon" className={styles.openIcon} onClick={() => setOpen(!open)}/>
+                        {
+                            open && <ul className={styles.mobileMenu}>
+                                {
+                                    Menus.map((menu: string) => {
+                                        let href = "/" + (menu === "Home" ? "" : menu.toLocaleLowerCase());
+                                        return <li key={menu} className={styles.menuOption}><Link href={href} className={styles.link}>{menu}</Link></li>
+                                    })
+                                }
+                            </ul>
+                        }
                     </div>
                 </div>
-                <div className={styles.desktopView}>
+                <div className={styles.desktopView}>{
                     <ul className={styles.desktopMenu}>
-                        {
+                        { 
                             Menus.map((menu) => {
-                                return <li key={menu} className={styles.menuOption}>{menu}</li>
+                                let href = "/" + (menu === "Home" ? "" : menu.toLocaleLowerCase());
+                                return <li key={menu} className={styles.menuOption}><Link href={href} className={styles.link}>{menu}</Link></li>
                             })
                         }
                     </ul>
+                    }
                 </div>
             </div>
         </div>
