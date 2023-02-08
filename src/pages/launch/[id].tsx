@@ -21,8 +21,6 @@ export async function getStaticPaths() {
         }
       `
     let datas:any = await getData(queryString)
-    ({datas})
-    
     let allPaths: StaticPathsType = datas.data?.launches.map((launch:HomeDataTypes) => {
       // (launch);
       
@@ -42,7 +40,6 @@ export async function getStaticPaths() {
   }
   
   export async function getStaticProps(context:ContextTypes) {
-    ({context});
     const id: string = context.params.id
     
     const queryString = `
@@ -66,17 +63,11 @@ export async function getStaticPaths() {
   }
 
 function Launch(props: LaunchPropsTypes){
-    ({props});
-    
     const router = useRouter();
 
     const { id } = router.query
 
-    ({router: router.asPath.split("?")});
-
     const splitArray = router.asPath.split("?")
-
-    (splitArray[2]?.slice(2));
     
     const videoLink = splitArray[1]?.split("link=")[1]?.slice(0,-5)+ "embed/" + splitArray[2]?.slice(2)
 
@@ -85,8 +76,6 @@ function Launch(props: LaunchPropsTypes){
     useEffect(() => {
       setVideoLinks(videoLink)
     }, [])
-
-    (videoLink);
     
     return (
       <>

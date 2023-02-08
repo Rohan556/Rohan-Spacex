@@ -1,7 +1,6 @@
 import { HomeDataTypes } from "./types";
 
 export const handlePageChange = (pageNumber: number, number_of_pages: number, pageSize: number, completeData: HomeDataTypes[]) => {
-    (pageNumber, number_of_pages);
     let entries: HomeDataTypes[];
     if(pageNumber === number_of_pages){
       const start = ((pageNumber - 1) * pageSize)
