@@ -5,7 +5,7 @@
 }
 
 /* Mobile View */
-@media (max-width: 450px) {
+@media (max-width: 500px) {
     .desktopView{
         display: none;
     }
@@ -15,6 +15,13 @@
         flex-direction: column;
         position: absolute;
         z-index: 10;
+        width: 98vw;
+        transform: translateX(-100%);
+        background-color: black;
+        opacity: 0.9;
+        font-weight: 700;
+        left: 140%;
+        top: 43px;
     }
 
     .openIcon{
@@ -37,12 +44,15 @@
     }
 
     .menuOption{
-       flex-basis: 40px;
+       flex-basis: 60px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
     }
 }
 
 /* Desktop View */
-@media (min-width: 451px) {
+@media (min-width: 501px) {
     .mobileView{
         display: none;
     }

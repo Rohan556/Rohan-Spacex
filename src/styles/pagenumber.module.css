@@ -1,0 +1,70 @@
+.container{
+    margin-top: 30px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pages{
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 1em;
+}
+
+.icon{
+   color: white;
+   font-size: 1.25rem;
+   font-weight: 700;
+   background: rgba(8, 70, 124, 0.8);
+   height: 3rem;
+   width: 3rem;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+}
+
+.icon:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: all 0.05s ease-in;
+}
+
+@media (max-width: 450px){
+    .icon{
+        height: 2.3rem;
+        width: 2.3rem;
+        font-size: 1rem;
+    }
+}
+
+.active{
+    color: black;
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-color: white;
+    border: 2px solid rgba(8, 70, 124, 0.8);
+    height: 3rem;
+    width: 3rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+.active:hover{
+    cursor: pointer;
+}
+@media (max-width: 450px){
+    .active{
+        height: 2.3rem;
+        width: 2.3rem;
+        font-size: 1rem;
+    }
+}

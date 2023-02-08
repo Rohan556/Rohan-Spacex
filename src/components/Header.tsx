@@ -2,13 +2,18 @@ import styles from "../styles/header.module.css"
 import MenuIcon from "@/public/static/MenuIcon.png"
 import CloseIcon from "@/public/static/Close.png"
 import Image from "next/image"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 
 function Header(){
 
     const Menus: string[] = ["Home", "About"]
     const [open, setOpen] = useState<boolean>(false)
+    const [activePage, setActivePage] = useState<String>("Home")
+
+    useEffect(() => {
+
+    }, [])
 
     return(
     <div className={styles.header}>
@@ -23,7 +28,7 @@ function Header(){
                                 {
                                     Menus.map((menu: string) => {
                                         let href = "/" + (menu === "Home" ? "" : menu.toLocaleLowerCase());
-                                        return <li key={menu} className={styles.menuOption}><Link href={href} className={styles.link}>{menu}</Link></li>
+                                        return <li key={menu} className={`${styles.menuOption} ${styles.active}`}><Link href={href} className={styles.link}>{menu}</Link></li>
                                     })
                                 }
                             </ul>

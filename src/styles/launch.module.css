@@ -1,0 +1,25 @@
+.container{
+    color: white;
+    text-align: center;
+    width: auto;
+}
+
+.details{
+    margin: 20px;
+}
+
+.properties{
+    font-size: 25px;
+    margin: 20px 0px;
+}
+
+.heading{
+    font-weight: 800;
+}
+
+.iframe{
+    margin: 20px 0;
+    min-width: 400px;
+    width: 90%;
+    height: 700px;
+}
