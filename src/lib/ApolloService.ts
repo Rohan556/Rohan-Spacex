@@ -17,12 +17,12 @@ async function getData(queryString: string){
     `
   })
   .then((result) => {
-    console.log({result: result.data.launches});
+    ({result: result.data.launches});
     data = result
     return result
   });
 
-  console.log({data})
+  ({data})
 
   return data
 }

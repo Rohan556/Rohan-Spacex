@@ -13,7 +13,7 @@ import Head from "next/head";
 
 let currentPageStart = 1
 export default function PageNumbers(props: PageNumbersProps){
-    console.log({props});
+    ({props});
 
     let [currentPage, setCurrentPage] = useState(1);
     let [pagesToShow, setPagesToShow] = useState<number[]>([]);
@@ -39,7 +39,7 @@ export default function PageNumbers(props: PageNumbersProps){
             temp.push(i);
         }
 
-        console.log({start, end});
+        ({start, end});
         
 
         if(start === 1){
@@ -73,7 +73,7 @@ export default function PageNumbers(props: PageNumbersProps){
                 setAllPages(1);
             }else{
                 
-                console.log(document.getElementById("left")?.classList);
+                (document.getElementById("left")?.classList);
                 document.getElementById("fullRight")?.classList.remove("disable")
                 document.getElementById("right")?.classList.remove("disable")
                 

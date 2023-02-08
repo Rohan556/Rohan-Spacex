@@ -21,10 +21,10 @@ export async function getStaticPaths() {
         }
       `
     let datas:any = await getData(queryString)
-    console.log({datas})
+    ({datas})
     
     let allPaths: StaticPathsType = datas.data?.launches.map((launch:HomeDataTypes) => {
-      // console.log(launch);
+      // (launch);
       
         return {
             params: {
@@ -33,7 +33,7 @@ export async function getStaticPaths() {
         }
     })
 
-    //console.log(allPaths);
+    //(allPaths);
     
     return {
       paths: allPaths,
@@ -42,7 +42,7 @@ export async function getStaticPaths() {
   }
   
   export async function getStaticProps(context:ContextTypes) {
-    console.log({context});
+    ({context});
     const id: string = context.params.id
     
     const queryString = `
@@ -53,7 +53,7 @@ export async function getStaticPaths() {
         }
       }
     `
-    // console.log({queryString});
+    // ({queryString});
     
     
     let data = await getData(queryString)
@@ -66,17 +66,17 @@ export async function getStaticPaths() {
   }
 
 function Launch(props: LaunchPropsTypes){
-    console.log({props});
+    ({props});
     
     const router = useRouter();
 
     const { id } = router.query
 
-    console.log({router: router.asPath.split("?")});
+    ({router: router.asPath.split("?")});
 
     const splitArray = router.asPath.split("?")
 
-    console.log(splitArray[2]?.slice(2));
+    (splitArray[2]?.slice(2));
     
     const videoLink = splitArray[1]?.split("link=")[1]?.slice(0,-5)+ "embed/" + splitArray[2]?.slice(2)
 
@@ -86,7 +86,7 @@ function Launch(props: LaunchPropsTypes){
       setVideoLinks(videoLink)
     }, [])
 
-    console.log(videoLink);
+    (videoLink);
     
     return (
       <>

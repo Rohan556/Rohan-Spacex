@@ -28,7 +28,7 @@ export async function getServerSideProps(){
   }
   `
   let data: any = await getData(queryString)
-  console.log({data});
+  ({data});
   
   return { props:  data  }
 }

@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { CardPropTypes } from "@/lib/types";
 
 export default function Card(props: CardPropTypes){
-    console.log({props});
+    ({props});
     
     const router = useRouter()
 
